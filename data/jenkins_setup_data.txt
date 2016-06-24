@@ -1,0 +1,31 @@
+*** Settings ***
+Documentation       Author: George Keishing   Version: JenkinsLRv1.0
+
+*** Variables ***
+
+# Test ENV mandatory variables
+# Update your own Jenkin user and password, just to keep things simpler
+# Keep the credential same as that of system, else change in the code
+# accordingly
+${USER_NAME}    <User login> 
+${PASS_WORD}    <Secrete password>
+
+# Web URL address to Login page
+# This is the URL link to login page for test, you should update your own
+# stuff here
+${JENKINS_URL}    http://<to your login page url>
+
+# Test Selenium needed variables
+# Traversing using XPATH locators
+${LOGIN_USER_XPATH}      xpath=//input[@name='j_username']
+${LOGIN_PASSWD_XPATH}    xpath=//input[@name='j_password']
+${SUBMIT_XPATH}          xpath=//button[@id='yui-gen1-button']
+${CELL_TABLE_XPATH}      xpath=//table[@class='pane']
+
+# Open Power Jenkin image page
+# This is jenkin page where the image of the build is generated.
+${URL_BARRELEYE}   https://<URL page to your Jenkins build page>
+${URL_PALMETTO}    https://<URL page to your Jenkins build page>
+
+
+
