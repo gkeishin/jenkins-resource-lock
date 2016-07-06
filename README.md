@@ -1,3 +1,7 @@
+This code is free to use, but dont forget to thank.
+
+mail: georgekeishing@gmail.com
+
 ---------------------
 INTRODUCTION
 ---------------------
