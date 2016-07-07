@@ -1,4 +1,4 @@
-This code is free to use, but dont forget to thank.
+This code is free to use,modify and distribute but don't forget to say thanks.
 
 mail: georgekeishing@gmail.com
 
