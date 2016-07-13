@@ -1,6 +1,6 @@
 This code is free to use,modify and distribute but don't forget to say thanks.
 
-mail: georgekeishing@gmail.com
+mail: gkeishin@gmail.com
 
 ---------------------
 INTRODUCTION
