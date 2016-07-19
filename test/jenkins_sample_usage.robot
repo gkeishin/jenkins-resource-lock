@@ -109,7 +109,7 @@ Create Workspace Directory
   [Documentation]   Download and prepare the work space for code update and test case execution
 
   Log To Console    \n Fetching Test Suite and code update tool from Github
-  Execute Command on Host   git clone https://github.com/gkeishin/openbmc-test-automation
+  Execute Command on Host   git clone https://github.com/openbmc/openbmc-test-automation
   Execute Command on Host   git clone https://github.com/causten/tools
 
 
