@@ -109,7 +109,7 @@ Create Workspace Directory
   [Documentation]   Download and prepare the work space for code update and test case execution
 
   Log To Console    \n Fetching Test Suite and code update tool from Github
-  Execute Command on Host   git clone https://github.com/mkumatag/openbmc-automation
+  Execute Command on Host   git clone https://github.com/gkeishin/openbmc-test-automation
   Execute Command on Host   git clone https://github.com/causten/tools
 
 
@@ -127,6 +127,24 @@ Code Update system
   Run Tests Test Suite     python tools/obmc/codeupdate.py -i ${TARGET} -u ${USER_NAME} -p ${PASS_WORD} -t bmc -f ${TAR_IMAGE}
 
 
+Release a Resource
+  [Documentation]   Release a Locked entry by index
+
+  # Continuing above lock example, using saved off index row
+  Variable Should Exist   ${ROW_INDEX}  msg=Indication that Reservation failed 
+  Release Target Entry   ${ROW_INDEX}
+  
+
+*** Keywords ***
+
+Download BMC Tar image
+  [Documentation]   Download the file
+  [Arguments]       ${url}   ${tar_file_version}
+
+  ${URL_FILE} =    Catenate  SEPARATOR=   ${url}   ${tar_file_version}
+  Log To Console   ${URL_FILE}
+  Download File from URL   ${URL_FILE}
+
 Execute Test on Target
   [Documentation]   Execute the test cases once code is updated
 
@@ -139,22 +157,4 @@ Execute Test on Target
 
   # Execute a Entire test suite
   #Run Tests Test Suite  OPENBMC_HOST=${TARGET} tox -e ${target_out} -- tests
-
-
-Release a Resource
-  [Documentation]   Release a Locked entry by index
-
-  # Continuing above lock example, using saved off index row
-  Variable Should Exist   ${ROW_INDEX}  msg=Indication that Reservation failed 
-  Release Target Entry   ${ROW_INDEX}
-
-*** Keywords ***
-
-Download BMC Tar image
-  [Documentation]   Download the file
-  [Arguments]       ${url}   ${tar_file_version}
-
-  ${URL_FILE} =    Catenate  SEPARATOR=   ${url}   ${tar_file_version}
-  Log To Console   ${URL_FILE}
-  Download File from URL   ${URL_FILE}
 
